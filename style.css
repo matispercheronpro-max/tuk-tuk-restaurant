@@ -1,0 +1,77 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+img{display:block;max-width:100%}
+::selection{background:var(--accent,#c0613a);color:var(--accent-ink,#fdf6ef)}
+
+@keyframes tt-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+@media (max-width:880px){ .navlinks{display:none !important} }
+@media (max-width:780px){
+  .hero-grid{grid-template-columns:1fr !important}
+  .split-grid{grid-template-columns:1fr !important}
+  .acces-grid{grid-template-columns:1fr !important}
+}
+
+/* Nav links underline-on-hover */
+.link-underline{
+  color:var(--ink);text-decoration:none;padding:4px 2px;
+  background-image:linear-gradient(var(--accent),var(--accent));
+  background-repeat:no-repeat;background-position:0 100%;background-size:0% 1.6px;
+  transition:background-size .3s cubic-bezier(.2,.7,.2,1),color .2s,transform .2s;
+}
+.link-underline:hover{ color:var(--accent); background-size:100% 1.6px; transform:translateY(-1px); }
+
+/* Accent button (SMS / CTA) */
+.btn-accent{
+  background:var(--accent);color:var(--accent-ink);
+  transition:background .2s,transform .2s;
+}
+.btn-accent:hover{ background:var(--accent-2); transform:translateY(-1px); }
+.btn-lg{
+  display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;gap:10px;
+  font-weight:700;font-size:1rem;padding:15px 26px;border-radius:2px;text-decoration:none;
+  box-shadow:0 14px 30px -16px var(--accent);
+}
+.btn-lg:hover{ transform:translateY(-2px); }
+
+/* Outline button */
+.btn-outline{
+  display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;gap:10px;
+  background:transparent;color:var(--ink);text-decoration:none;font-weight:600;font-size:1rem;
+  padding:14px 24px;border-radius:2px;border:1.5px solid var(--ink);
+  transition:background .2s,color .2s;
+}
+.btn-outline:hover{ background:var(--ink); color:var(--bg); }
+
+/* WhatsApp button */
+.btn-whatsapp{
+  display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;gap:9px;
+  background:#1faf54;color:#fff;text-decoration:none;font-weight:700;font-size:1rem;
+  padding:14px 22px;border-radius:2px;transition:background .2s,transform .2s;
+}
+.btn-whatsapp:hover{ background:#188f44; transform:translateY(-2px); }
+
+/* Dark button (avis Google) */
+.btn-dark{
+  display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--bg);
+  text-decoration:none;font-weight:600;font-size:.95rem;padding:11px 18px;border-radius:2px;
+  transition:background .2s,transform .2s;
+}
+.btn-dark:hover{ background:var(--accent); transform:translateY(-1px); }
+
+/* Footer links */
+.footer-link{ color:var(--bg); text-decoration:none; }
+.footer-link:hover{ color:var(--accent); }
+
+/* Social circle (Instagram) */
+.social-circle{
+  width:40px;height:40px;border-radius:50%;border:1px solid rgba(245,239,230,.28);
+  display:flex;align-items:center;justify-content:center;color:var(--bg);text-decoration:none;
+  font-size:13px;font-weight:600;transition:background .2s,border-color .2s,color .2s;
+}
+.social-circle:hover{ background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+
+/* Scroll-reveal: JS adds .reveal-hidden only to elements below the fold on load */
+[data-reveal].reveal-hidden{ opacity:0; transform:translateY(22px); }
+[data-reveal]{ transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
