@@ -12,6 +12,40 @@ img{display:block;max-width:100%}
   .split-grid{grid-template-columns:1fr !important}
   .acces-grid{grid-template-columns:1fr !important}
 }
+@media (max-width:480px){
+  .nav-region{display:none !important}
+  .nav-phone{padding:11px 12px !important}
+  .nav-phone-text{display:none}
+}
+
+/* Avis : carrousel sur mobile */
+.avis-arrow{ display:none; }
+@media (max-width:780px){
+  .avis-track{
+    display:flex !important;
+    grid-template-columns:none !important;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    padding-bottom:4px;
+  }
+  .avis-track::-webkit-scrollbar{ display:none; }
+  .avis-card{
+    flex:0 0 85%;
+    scroll-snap-align:center;
+  }
+  .avis-arrow{
+    display:flex;align-items:center;justify-content:center;
+    position:absolute;top:50%;transform:translateY(-50%);
+    width:36px;height:36px;border-radius:50%;
+    background:var(--surface);border:1px solid var(--line);
+    color:var(--ink);font-size:20px;line-height:1;cursor:pointer;z-index:5;
+    box-shadow:0 8px 20px -10px rgba(50,33,20,.5);
+  }
+  .avis-arrow-prev{ left:-6px; }
+  .avis-arrow-next{ right:-6px; }
+}
 
 /* Nav links underline-on-hover */
 .link-underline{

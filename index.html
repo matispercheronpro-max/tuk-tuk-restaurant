@@ -17,7 +17,7 @@
   <nav id="site-nav" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(18px,5vw,56px);background:var(--nav-bg);backdrop-filter:saturate(160%) blur(12px);-webkit-backdrop-filter:saturate(160%) blur(12px);transition:box-shadow .3s ease;">
     <a href="#top" aria-label="Tuk Tuk" style="display:flex;align-items:center;gap:12px;text-decoration:none;flex:none;">
       <img src="assets/logo.png" alt="Tuk Tuk" style="display:block;height:50px;width:auto;">
-      <span style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-2);font-weight:600;padding-left:13px;border-left:1px solid var(--line);">Grenoble</span>
+      <span class="nav-region" style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-2);font-weight:600;padding-left:13px;border-left:1px solid var(--line);">Grenoble</span>
     </a>
     <div data-navlinks="1" class="navlinks" style="display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500;letter-spacing:.01em;">
       <a href="#carte" class="link-underline">La carte</a>
@@ -25,9 +25,9 @@
       <a href="#avis" class="link-underline">Avis</a>
       <a href="#acces" class="link-underline">Accès</a>
     </div>
-    <a href="sms:0769160810" class="btn-accent" style="display:inline-flex;align-items:center;gap:9px;flex:none;text-decoration:none;font-weight:700;font-size:14.5px;letter-spacing:.01em;padding:11px 18px;border-radius:2px;white-space:nowrap;box-shadow:0 1px 0 rgba(0,0,0,.04);">
+    <a href="sms:0769160810" class="btn-accent nav-phone" style="display:inline-flex;align-items:center;gap:9px;flex:none;text-decoration:none;font-weight:700;font-size:14.5px;letter-spacing:.01em;padding:11px 18px;border-radius:2px;white-space:nowrap;box-shadow:0 1px 0 rgba(0,0,0,.04);">
       <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" style="flex:none;display:block;"><path d="M4 4h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 4v-4H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"></path><circle cx="8.3" cy="9.6" r="0.6" fill="currentColor" stroke="none"></circle><circle cx="12" cy="9.6" r="0.6" fill="currentColor" stroke="none"></circle><circle cx="15.7" cy="9.6" r="0.6" fill="currentColor" stroke="none"></circle></svg>
-      07 69 16 08 10
+      <span class="nav-phone-text">07 69 16 08 10</span>
     </a>
   </nav>
 
@@ -228,31 +228,35 @@
         </div>
       </div>
 
-      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
-        <div style="background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:26px;display:flex;flex-direction:column;gap:14px;">
-          <div style="color:var(--accent);font-size:15px;letter-spacing:2px;">★★★★★</div>
-          <p style="font-size:1.02rem;line-height:1.62;color:var(--ink);margin:0;flex:1;">« Excellent moment passé dans votre restaurant, l'accueil était exemplaire et les plats proposés sont parfaits, nous avons passé un très bon moment ! Merci »</p>
-          <div style="display:flex;align-items:center;gap:11px;border-top:1px solid var(--line);padding-top:14px;">
-            <span style="width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px;">C</span>
-            <div><div style="font-weight:600;font-size:14px;color:var(--ink);">Carmona Célia</div><div style="font-size:12px;color:var(--ink-2);">Avis Google</div></div>
+      <div style="position:relative;">
+        <div id="avis-track" data-reveal="1" class="avis-track" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+          <div class="avis-card" style="background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:26px;display:flex;flex-direction:column;gap:14px;">
+            <div style="color:var(--accent);font-size:15px;letter-spacing:2px;">★★★★★</div>
+            <p style="font-size:1.02rem;line-height:1.62;color:var(--ink);margin:0;flex:1;">« Excellent moment passé dans votre restaurant, l'accueil était exemplaire et les plats proposés sont parfaits, nous avons passé un très bon moment ! Merci »</p>
+            <div style="display:flex;align-items:center;gap:11px;border-top:1px solid var(--line);padding-top:14px;">
+              <span style="width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px;">C</span>
+              <div><div style="font-weight:600;font-size:14px;color:var(--ink);">Carmona Célia</div><div style="font-size:12px;color:var(--ink-2);">Avis Google</div></div>
+            </div>
+          </div>
+          <div class="avis-card" style="background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:26px;display:flex;flex-direction:column;gap:14px;">
+            <div style="color:var(--accent);font-size:15px;letter-spacing:2px;">★★★★★</div>
+            <p style="font-size:1.02rem;line-height:1.62;color:var(--ink);margin:0;flex:1;">« JE RECOMMANDE ! Plats généreux et délicieux, prix abordable, personnel adorable. Comment ne pas y retourner ? »</p>
+            <div style="display:flex;align-items:center;gap:11px;border-top:1px solid var(--line);padding-top:14px;">
+              <span style="width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px;">M</span>
+              <div><div style="font-weight:600;font-size:14px;color:var(--ink);">Matis. P</div><div style="font-size:12px;color:var(--ink-2);">Avis Google</div></div>
+            </div>
+          </div>
+          <div class="avis-card" style="background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:26px;display:flex;flex-direction:column;gap:14px;">
+            <div style="color:var(--accent);font-size:15px;letter-spacing:2px;">★★★★★</div>
+            <p style="font-size:1.02rem;line-height:1.62;color:var(--ink);margin:0;flex:1;">« Tout était délicieux et plein de saveurs ! Un grand merci pour l'accueil chaleureux et le service impeccable et rapide. Nous recommandons vivement ce restaurant (qui plus est halal). Tout est fait maison avec des produits frais, et ça se sent vraiment ! »</p>
+            <div style="display:flex;align-items:center;gap:11px;border-top:1px solid var(--line);padding-top:14px;">
+              <span style="width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px;">S</span>
+              <div><div style="font-weight:600;font-size:14px;color:var(--ink);">Siham kas</div><div style="font-size:12px;color:var(--ink-2);">Avis Google</div></div>
+            </div>
           </div>
         </div>
-        <div style="background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:26px;display:flex;flex-direction:column;gap:14px;">
-          <div style="color:var(--accent);font-size:15px;letter-spacing:2px;">★★★★★</div>
-          <p style="font-size:1.02rem;line-height:1.62;color:var(--ink);margin:0;flex:1;">« JE RECOMMANDE ! Plats généreux et délicieux, prix abordable, personnel adorable. Comment ne pas y retourner ? »</p>
-          <div style="display:flex;align-items:center;gap:11px;border-top:1px solid var(--line);padding-top:14px;">
-            <span style="width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px;">M</span>
-            <div><div style="font-weight:600;font-size:14px;color:var(--ink);">Matis. P</div><div style="font-size:12px;color:var(--ink-2);">Avis Google</div></div>
-          </div>
-        </div>
-        <div style="background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:26px;display:flex;flex-direction:column;gap:14px;">
-          <div style="color:var(--accent);font-size:15px;letter-spacing:2px;">★★★★★</div>
-          <p style="font-size:1.02rem;line-height:1.62;color:var(--ink);margin:0;flex:1;">« Tout était délicieux et plein de saveurs ! Un grand merci pour l'accueil chaleureux et le service impeccable et rapide. Nous recommandons vivement ce restaurant (qui plus est halal). Tout est fait maison avec des produits frais, et ça se sent vraiment ! »</p>
-          <div style="display:flex;align-items:center;gap:11px;border-top:1px solid var(--line);padding-top:14px;">
-            <span style="width:36px;height:36px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px;">S</span>
-            <div><div style="font-weight:600;font-size:14px;color:var(--ink);">Siham kas</div><div style="font-size:12px;color:var(--ink-2);">Avis Google</div></div>
-          </div>
-        </div>
+        <button type="button" class="avis-arrow avis-arrow-prev" aria-label="Avis précédent">‹</button>
+        <button type="button" class="avis-arrow avis-arrow-next" aria-label="Avis suivant">›</button>
       </div>
       <div data-reveal="1" style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin:24px 0 0;">
         <a href="https://www.google.com/maps/search/?api=1&amp;query=Tuk%20Tuk%2010%20Rue%20Doudart%20de%20Lagr%C3%A9e%2038000%20Grenoble" target="_blank" rel="noopener" class="btn-dark">Voir tous les avis sur Google</a>

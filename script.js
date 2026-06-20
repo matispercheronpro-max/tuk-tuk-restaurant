@@ -40,4 +40,17 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
+
+  var avisTrack = document.getElementById('avis-track');
+  var avisPrev = document.querySelector('.avis-arrow-prev');
+  var avisNext = document.querySelector('.avis-arrow-next');
+  if (avisTrack && avisPrev && avisNext) {
+    var scrollAvis = function (dir) {
+      var card = avisTrack.querySelector('.avis-card');
+      var amount = card ? card.getBoundingClientRect().width + 20 : avisTrack.clientWidth * 0.85;
+      avisTrack.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    };
+    avisPrev.addEventListener('click', function () { scrollAvis(-1); });
+    avisNext.addEventListener('click', function () { scrollAvis(1); });
+  }
 })();
