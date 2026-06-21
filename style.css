@@ -10,7 +10,7 @@ img{display:block;max-width:100%}
   .navlinks{display:none !important}
   .nav-phone{display:none !important}   /* le burger remplace le bouton SMS sur mobile */
   .nav-region{display:none !important}
-  .nav-logo{height:56px !important}
+  .nav-logo{height:64px !important}
 }
 @media (max-width:780px){
   .hero-grid{grid-template-columns:1fr !important}
