@@ -6,17 +6,59 @@ img{display:block;max-width:100%}
 
 @keyframes tt-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-@media (max-width:880px){ .navlinks{display:none !important} }
+@media (max-width:880px){
+  .navlinks{display:none !important}
+  .nav-phone{display:none !important}   /* le burger remplace le bouton SMS sur mobile */
+  .nav-region{display:none !important}
+  .nav-logo{height:56px !important}
+}
 @media (max-width:780px){
   .hero-grid{grid-template-columns:1fr !important}
   .split-grid{grid-template-columns:1fr !important}
   .acces-grid{grid-template-columns:1fr !important}
+  .hero-section{padding-top:22px !important}
+  /* 2 boutons hero côte à côte */
+  .hero-cta{flex-wrap:nowrap !important}
+  .hero-cta > a{flex:1}
+  .hero-cta .btn-lg{padding-left:14px;padding-right:14px}
 }
-@media (max-width:480px){
-  .nav-region{display:none !important}
-  .nav-phone{padding:11px 12px !important}
-  .nav-phone-text{display:none}
+
+/* Burger (mobile uniquement) */
+.nav-burger{display:none}
+@media (max-width:880px){
+  .nav-burger{
+    display:flex;flex-direction:column;justify-content:center;gap:5px;
+    width:46px;height:46px;padding:13px;flex:none;
+    background:var(--accent);border:none;border-radius:2px;cursor:pointer;
+  }
+  .nav-burger span{display:block;height:2px;width:100%;background:var(--accent-ink);border-radius:2px;transition:transform .25s,opacity .2s}
+  .nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 }
+
+/* Panneau latéral mobile */
+.panel-backdrop{
+  position:fixed;inset:0;background:rgba(43,36,32,.5);z-index:60;
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s,visibility .3s;
+}
+.panel-backdrop.is-open{opacity:1;visibility:visible;pointer-events:auto}
+.mobile-panel{
+  position:fixed;top:0;right:0;height:100%;width:min(82vw,340px);
+  background:var(--bg);z-index:70;box-shadow:-20px 0 60px -30px rgba(40,28,18,.6);
+  transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.7,.2,1);
+  display:flex;flex-direction:column;padding:18px 22px 26px;
+}
+.mobile-panel.is-open{transform:translateX(0)}
+.mobile-panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.panel-close{background:none;border:none;font-size:34px;line-height:1;color:var(--ink);cursor:pointer;padding:0 4px}
+.mobile-panel-links{display:flex;flex-direction:column}
+.mobile-panel-links a{
+  color:var(--ink);text-decoration:none;font-size:1.15rem;font-weight:600;
+  padding:15px 2px;border-bottom:1px solid var(--line);transition:color .2s;
+}
+.mobile-panel-links a:hover,.mobile-panel-links a:active{color:var(--accent)}
+.mobile-panel-cta{display:flex;flex-direction:column;gap:12px;margin-top:auto;padding-top:22px}
 
 /* Avis : carrousel sur mobile */
 .avis-arrow{ display:none; }

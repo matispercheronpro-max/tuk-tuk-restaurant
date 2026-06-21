@@ -41,6 +41,36 @@
     onScroll();
   }
 
+  var burger = document.getElementById('nav-burger');
+  var panel = document.getElementById('mobile-panel');
+  var backdrop = document.getElementById('panel-backdrop');
+  var panelClose = document.getElementById('panel-close');
+  if (burger && panel && backdrop) {
+    var openPanel = function () {
+      panel.classList.add('is-open');
+      backdrop.classList.add('is-open');
+      panel.setAttribute('aria-hidden', 'false');
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+    var closePanel = function () {
+      panel.classList.remove('is-open');
+      backdrop.classList.remove('is-open');
+      panel.setAttribute('aria-hidden', 'true');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+    burger.addEventListener('click', openPanel);
+    backdrop.addEventListener('click', closePanel);
+    if (panelClose) panelClose.addEventListener('click', closePanel);
+    panel.querySelectorAll('[data-panel-link]').forEach(function (a) {
+      a.addEventListener('click', closePanel);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closePanel();
+    });
+  }
+
   var avisTrack = document.getElementById('avis-track');
   var avisPrev = document.querySelector('.avis-arrow-prev');
   var avisNext = document.querySelector('.avis-arrow-next');
