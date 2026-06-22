@@ -83,4 +83,31 @@
     avisPrev.addEventListener('click', function () { scrollAvis(-1); });
     avisNext.addEventListener('click', function () { scrollAvis(1); });
   }
+
+  var galerieTrack = document.getElementById('galerie-track');
+  var galeriePrev = document.querySelector('.galerie-arrow-prev');
+  var galerieNext = document.querySelector('.galerie-arrow-next');
+  var galerieCounter = document.getElementById('galerie-counter');
+  if (galerieTrack && galeriePrev && galerieNext) {
+    var galerieItems = galerieTrack.querySelectorAll('.galerie-item, .galerie-img');
+    var scrollGalerie = function (dir) {
+      var item = galerieItems[0];
+      var amount = item ? item.getBoundingClientRect().width + 18 : galerieTrack.clientWidth * 0.8;
+      galerieTrack.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    };
+    galeriePrev.addEventListener('click', function () { scrollGalerie(-1); });
+    galerieNext.addEventListener('click', function () { scrollGalerie(1); });
+
+    if (galerieCounter && galerieItems.length) {
+      var updateCounter = function () {
+        var amount = galerieItems[0].getBoundingClientRect().width + 18;
+        var idx = Math.round(galerieTrack.scrollLeft / amount);
+        idx = Math.max(0, Math.min(idx, galerieItems.length - 1));
+        galerieCounter.textContent = (idx + 1) + '/' + galerieItems.length;
+      };
+      galerieTrack.addEventListener('scroll', function () {
+        window.requestAnimationFrame(updateCounter);
+      }, { passive: true });
+    }
+  }
 })();

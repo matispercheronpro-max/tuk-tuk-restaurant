@@ -14,14 +14,15 @@
 <div id="root" style="--bg:#f5efe6;--bg-2:#efe7da;--surface:#fbf8f1;--ink:#2b2420;--ink-2:#6f655c;--line:#e4dacb;--accent:#c0613a;--accent-2:#a44e2c;--accent-ink:#fdf6ef;--accent-soft:#efd9c8;--nav-bg:rgba(245,239,230,.82);background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;">
 
   <!-- NAV -->
-  <nav id="site-nav" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(18px,5vw,56px);background:var(--nav-bg);backdrop-filter:saturate(160%) blur(12px);-webkit-backdrop-filter:saturate(160%) blur(12px);transition:box-shadow .3s ease;">
+  <nav id="site-nav" style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:9px clamp(18px,5vw,56px);background:var(--nav-bg);backdrop-filter:saturate(160%) blur(12px);-webkit-backdrop-filter:saturate(160%) blur(12px);transition:box-shadow .3s ease;">
     <a href="#top" aria-label="Tuk Tuk" style="display:flex;align-items:center;gap:12px;text-decoration:none;flex:none;">
-      <img class="nav-logo" src="assets/logo.png" alt="Tuk Tuk" style="display:block;height:64px;width:auto;">
+      <img class="nav-logo" src="assets/logo.png" alt="Tuk Tuk" style="display:block;height:92px;width:auto;">
       <span class="nav-region" style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-2);font-weight:600;padding-left:13px;border-left:1px solid var(--line);">Grenoble</span>
     </a>
     <div data-navlinks="1" class="navlinks" style="display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500;letter-spacing:.01em;">
       <a href="#carte" class="link-underline">La carte</a>
       <a href="#maison" class="link-underline">Notre maison</a>
+      <a href="#galerie" class="link-underline">Galerie</a>
       <a href="#avis" class="link-underline">Avis</a>
       <a href="#acces" class="link-underline">Accès</a>
     </div>
@@ -44,6 +45,7 @@
     <nav class="mobile-panel-links">
       <a href="#carte" data-panel-link>La carte</a>
       <a href="#maison" data-panel-link>Notre histoire</a>
+      <a href="#galerie" data-panel-link>Galerie</a>
       <a href="#avis" data-panel-link>Avis</a>
       <a href="#acces" data-panel-link>Nous trouver</a>
       <a href="https://www.instagram.com/tuktukgallery" target="_blank" rel="noopener" data-panel-link>Instagram</a>
@@ -102,7 +104,7 @@
   <section id="maison" style="padding:clamp(56px,9vw,120px) clamp(18px,5vw,56px);">
     <div data-split="1" class="split-grid" style="display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(28px,5vw,72px);align-items:center;max-width:1240px;margin:0 auto;">
       <div data-reveal="1" style="position:relative;">
-        <img src="assets/bowls.jpg" alt="Bowls maison à partager" style="width:100%;aspect-ratio:4/4.7;object-fit:cover;border-radius:3px;box-shadow:0 40px 70px -44px rgba(50,33,20,.5);background:var(--accent-soft);">
+        <img src="assets/notre-maison.jpg" alt="Bowls maison à partager chez Tuk Tuk" style="width:100%;aspect-ratio:4/4.7;object-fit:cover;border-radius:3px;box-shadow:0 40px 70px -44px rgba(50,33,20,.5);background:var(--accent-soft);">
       </div>
       <div data-reveal="1">
         <div style="font-size:12px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;">Notre maison</div>
@@ -114,6 +116,33 @@
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:9px 15px;border-radius:2px;">Frais &amp; healthy</span>
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:9px 15px;border-radius:2px;">Convivial &amp; familial</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section id="galerie" style="background:var(--bg-2);padding:clamp(56px,9vw,110px) clamp(18px,5vw,56px);border-top:1px solid var(--line);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div data-reveal="1" style="display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:clamp(26px,4vw,40px);">
+        <div>
+          <div style="font-size:12px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">Galerie</div>
+          <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-.015em;font-size:clamp(2rem,4vw,3.1rem);line-height:1.08;margin:0;color:var(--ink);">En images</h2>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;flex:none;">
+          <span id="galerie-counter" style="font-size:13px;font-weight:600;color:var(--ink-2);font-feature-settings:'tnum';">1/6</span>
+          <div style="display:flex;gap:10px;">
+            <button type="button" class="galerie-arrow galerie-arrow-prev" aria-label="Photo précédente">‹</button>
+            <button type="button" class="galerie-arrow galerie-arrow-next" aria-label="Photo suivante">›</button>
+          </div>
+        </div>
+      </div>
+      <div data-reveal="1" id="galerie-track" class="galerie-track">
+        <img class="galerie-img" src="assets/galerie/photo-1.jpg" alt="Bruschette maison et banh mì vus du dessus chez Tuk Tuk">
+        <img class="galerie-img" src="assets/galerie/photo-2.jpg" alt="Bruschette maison et banh mì coupés en salle chez Tuk Tuk">
+        <img class="galerie-img" src="assets/galerie/photo-3.jpg" alt="Panna cotta maison à la mangue et grenade chez Tuk Tuk">
+        <img class="galerie-img" src="assets/galerie/photo-4.jpg" alt="Panna cotta maison servie en salle chez Tuk Tuk">
+        <img class="galerie-img" src="assets/galerie/photo-5.jpg" alt="Dessert frais aux fruits, mangue, melon et grenade chez Tuk Tuk">
+        <img class="galerie-img" src="assets/galerie/photo-6.jpg" alt="Dessert frais aux fruits servi en salle chez Tuk Tuk">
       </div>
     </div>
   </section>
@@ -150,9 +179,18 @@
             <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);">Sandwich</span>
           </div>
           <div style="display:flex;flex-direction:column;gap:14px;">
-            <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Poulet, bœuf — au choix</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">8,80</span></div>
-            <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Bœuf au saté</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">8,90</span></div>
-            <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Poulet aux épices</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">8,50</span></div>
+            <div>
+              <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Bœuf au saté</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">8,90</span></div>
+              <div style="font-size:12.5px;color:var(--ink-2);margin-top:2px;">Mayonnaise coriandre, pickles maison (carottes, concombre, oignon rouge), oignons frits, bœuf mariné saté</div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Poulet aux épices</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">8,50</span></div>
+              <div style="font-size:12.5px;color:var(--ink-2);margin-top:2px;">Mayonnaise coriandre, pickles maison (carottes, concombre, oignon rouge), oignons frits, poulet mariné</div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Tofu au kroeung</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">8,50</span></div>
+              <div style="font-size:12.5px;color:var(--ink-2);margin-top:2px;">Citronnelle, curcuma, galanga, kombava</div>
+            </div>
           </div>
         </div>
 
@@ -168,7 +206,10 @@
               <div style="font-size:12.5px;color:var(--ink-2);margin-top:2px;">Poivre de Kampot, salade, oignon rouge, tomate cerise, riz jasmin sauté, œuf au plat, coriandre, citron vert</div>
             </div>
             <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Poulet gingembre</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">10,00</span></div>
-            <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Salade de bœuf à la citronnelle et basilic thaï</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">10,00</span></div>
+            <div>
+              <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Salade de bœuf à la citronnelle et basilic thaï</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">10,00</span></div>
+              <div style="font-size:12.5px;color:var(--ink-2);margin-top:2px;">Crudités, concombre, carotte, basilic thaï, oignon rouge</div>
+            </div>
             <div>
               <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Bobun bœuf</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">10,90</span></div>
               <div style="font-size:12.5px;color:var(--ink-2);margin-top:2px;">Salade, carotte, concombre, soja, menthe fraîche, cacahuète, vermicelles de riz, nem frais au poulet, bœuf mariné au saté, citron vert, coriandre</div>
@@ -216,12 +257,12 @@
               <div style="font-size:12.5px;color:var(--ink-2);margin-top:2px;">Thé noir ou thé vert, menthe fraîche, gingembre bio, citron &amp; miel</div>
             </div>
             <div>
-              <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Jus de fruits frais du jour</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">4,90</span></div>
+              <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Jus de fruits frais du jour 33cl</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">4,90</span></div>
               <div style="font-size:12.5px;color:var(--ink-2);margin-top:2px;">Orange, ananas, banane, menthe fraîche, gingembre bio · 50cl (+1€)</div>
             </div>
             <div>
               <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-weight:600;font-size:1.02rem;color:var(--ink);">Infusion menthe fraîche</span><span style="flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);"></span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1rem;font-feature-settings:'tnum';color:var(--ink);">2,30</span></div>
-              <div style="font-size:12.5px;color:var(--ink-2);margin-top:2px;">+ gingembre bio (+0,30€) · ou + citron, miel &amp; gingembre (+0,30€)</div>
+              <div style="font-size:12.5px;color:var(--ink-2);margin-top:2px;">+ gingembre bio (+0,30€) · ou + citron, miel &amp; gingembre (+0,60€)</div>
             </div>
           </div>
         </div>
@@ -356,6 +397,7 @@
     </div>
     <div style="max-width:1180px;margin:36px auto 0;padding-top:22px;border-top:1px solid rgba(245,239,230,.16);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:12.5px;color:rgba(245,239,230,.5);">
       <span>© 2026 Tuk Tuk · Grenoble</span>
+      <a href="mentions-legales.html" class="footer-link" style="color:rgba(245,239,230,.5);">Mentions légales</a>
       <span>Fait maison · 100% halal</span>
     </div>
   </footer>
