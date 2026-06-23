@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tuktuk-grenoble.fr/sitemap.xml
