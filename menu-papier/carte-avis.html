@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Carte avis Tuk Tuk - A6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5efe6;--ink:#2b2420;--ink-2:#6f655c;--line:#e4dacb;
+    --accent:#c0613a;--accent-soft:#efd9c8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Bricolage Grotesque',sans-serif;background:#ddd;}
+  .card{
+    width:397px;height:559px;background:var(--bg);color:var(--ink);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:36px 30px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card" id="avis">
+  <img src="../assets/logo-carre.png" alt="Tuk Tuk" style="width:110px;height:110px;object-fit:contain;margin-bottom:14px;">
+  <div style="font-size:1.02rem;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.35;">Vous avez passé un bon moment ?</div>
+  <p style="font-size:.78rem;color:var(--ink-2);line-height:1.55;max-width:300px;margin-bottom:20px;">Un avis Google nous aide énormément à faire connaître Tuk Tuk — ça prend 30 secondes, et ça compte beaucoup pour nous.</p>
+
+  <div style="background:#fff;border:1px solid var(--line);border-radius:6px;padding:12px;margin-bottom:14px;">
+    <img src="qr-avis.png" alt="QR code avis Google" style="width:140px;height:140px;display:block;">
+  </div>
+  <div style="font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:20px;">Scannez pour nous laisser un avis</div>
+
+  <div style="width:28px;height:1.5px;background:var(--accent);opacity:.5;margin-bottom:14px;"></div>
+  <div style="font-size:.78rem;color:var(--ink-2);">Merci de votre visite,<br><strong style="color:var(--ink);">l'équipe Tuk Tuk</strong></div>
+</div>
+
+</body>
+</html>

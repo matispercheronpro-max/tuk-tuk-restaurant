@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Carte Tuk Tuk - A5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5efe6;--bg-2:#efe7da;--surface:#fbf8f1;--ink:#2b2420;--ink-2:#6f655c;
+    --line:#e4dacb;--accent:#c0613a;--accent-2:#a44e2c;--accent-ink:#fdf6ef;--accent-soft:#efd9c8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Bricolage Grotesque',sans-serif;background:#ddd;}
+  .page{
+    width:559px;height:794px;background:var(--bg);color:var(--ink);
+    position:relative;overflow:hidden;page-break-after:always;
+    padding:46px 42px;display:flex;flex-direction:column;
+  }
+  .kicker{font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+  .cat-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:14px;border-bottom:1.5px solid var(--ink);padding-bottom:8px;}
+  .cat-head h2{font-size:1.32rem;font-weight:700;letter-spacing:-.015em;}
+  .cat-sub{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);}
+  .items{display:flex;flex-direction:column;gap:13px;}
+  .item-row{display:flex;align-items:baseline;gap:7px;}
+  .item-name{font-weight:600;font-size:.92rem;}
+  .item-dots{flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);}
+  .item-price{font-weight:700;font-size:.9rem;font-feature-settings:'tnum';white-space:nowrap;}
+  .item-desc{font-size:11px;color:var(--ink-2);margin-top:3px;line-height:1.45;}
+  .section-block{margin-bottom:30px;}
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:30px;padding:6px 12px;}
+  .footnote{font-size:10px;color:var(--ink-2);text-align:center;margin-top:auto;padding-top:18px;}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 : COUVERTURE -->
+<div class="page" id="p1" style="align-items:center;text-align:center;">
+  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:18px;">
+    <img src="../assets/logo-carre.png" alt="Tuk Tuk" style="width:420px;height:420px;object-fit:contain;margin-bottom:14px;">
+    <div style="font-size:1.05rem;color:var(--accent);font-weight:600;margin-bottom:14px;line-height:1.4;">Cuisine fusion d'Asie du Sud-Est<br>&amp; d'ailleurs</div>
+    <div style="width:34px;height:1.5px;background:var(--accent);opacity:.55;margin:0 0 22px;"></div>
+    <p style="font-size:.95rem;color:var(--ink-2);line-height:1.65;max-width:380px;margin-bottom:26px;">Tout est fait maison, alors la carte évolue régulièrement selon le marché et les arrivages. <strong style="color:var(--ink);">Une mini-carte, au jour le jour.</strong></p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
+      <span class="badge">100% halal</span>
+      <span class="badge">Plats végétariens</span>
+      <span class="badge">Options sans gluten</span>
+    </div>
+  </div>
+  <div style="width:100%;text-align:center;font-size:11px;color:var(--ink-2);line-height:2.1;border-top:1px solid var(--line);padding-top:20px;margin-top:auto;">
+    <div>10 Rue Doudart de Lagrée, 38000 Grenoble</div>
+    <div>Lundi–Jeudi &amp; Samedi · 9h30–14h30 · Fermé vendredi &amp; dimanche</div>
+    <div>Réservation par SMS · 07 69 16 08 10</div>
+  </div>
+</div>
+
+<!-- PAGE 2 : BANH MI + BRUSCHETTE -->
+<div class="page" id="p2">
+  <div class="kicker">La carte</div>
+  <div class="section-block">
+    <div class="cat-head"><h2>Banh Mi</h2><span class="cat-sub">Sandwich</span></div>
+    <div class="items">
+      <div>
+        <div class="item-row"><span class="item-name">Bœuf au saté</span><span class="item-dots"></span><span class="item-price">8,90</span></div>
+        <div class="item-desc">Mayonnaise coriandre, pickles maison (carottes, concombre, oignon rouge), oignons frits, bœuf mariné saté</div>
+      </div>
+      <div>
+        <div class="item-row"><span class="item-name">Poulet aux épices</span><span class="item-dots"></span><span class="item-price">8,50</span></div>
+        <div class="item-desc">Mayonnaise coriandre, pickles maison (carottes, concombre, oignon rouge), oignons frits, poulet mariné</div>
+      </div>
+      <div>
+        <div class="item-row"><span class="item-name">Tofu au kroeung</span><span class="item-dots"></span><span class="item-price">8,50</span></div>
+        <div class="item-desc">Citronnelle, curcuma, galanga, kombava</div>
+      </div>
+    </div>
+  </div>
+  <div class="section-block">
+    <div class="cat-head"><h2>Bruschette</h2><span class="cat-sub">Pain grillé maison</span></div>
+    <div class="items">
+      <div class="item-row"><span class="item-name">Margarita</span><span class="item-dots"></span><span class="item-price">5,70</span></div>
+      <div class="item-row"><span class="item-name">Végétarienne</span><span class="item-dots"></span><span class="item-price">6,70</span></div>
+      <div class="item-row"><span class="item-name">Napolitaine</span><span class="item-dots"></span><span class="item-price">6,70</span></div>
+      <div class="item-row"><span class="item-name">Thon</span><span class="item-dots"></span><span class="item-price">6,70</span></div>
+    </div>
+  </div>
+  <div class="footnote">Carte non contractuelle · les plats varient selon le marché et les arrivages du jour.</div>
+</div>
+
+<!-- PAGE 3 : PLATS + DESSERTS -->
+<div class="page" id="p3">
+  <div class="kicker">La carte</div>
+  <div class="section-block">
+    <div class="cat-head"><h2>Plats</h2><span class="cat-sub">Bowls &amp; wok</span></div>
+    <div class="items">
+      <div>
+        <div class="item-row"><span class="item-name">Bœuf Lóc Lác</span><span class="item-dots"></span><span class="item-price">11,90</span></div>
+        <div class="item-desc">Poivre de Kampot, salade, oignon rouge, tomate cerise, riz jasmin sauté, œuf au plat, coriandre, citron vert</div>
+      </div>
+      <div>
+        <div class="item-row"><span class="item-name">Salade de bœuf citronnelle &amp; basilic thaï</span><span class="item-dots"></span><span class="item-price">10,00</span></div>
+        <div class="item-desc">Crudités, concombre, carotte, basilic thaï, oignon rouge</div>
+      </div>
+      <div>
+        <div class="item-row"><span class="item-name">Bobun bœuf</span><span class="item-dots"></span><span class="item-price">10,90</span></div>
+        <div class="item-desc">Salade, carotte, concombre, soja, menthe fraîche, cacahuète, vermicelles de riz, nem frais au poulet, bœuf mariné au saté, citron vert, coriandre</div>
+      </div>
+    </div>
+    <div class="item-desc" style="margin-top:8px;">Supplément riz sauté +2,50€</div>
+  </div>
+
+  <div class="section-block" style="margin-bottom:18px;">
+    <div class="cat-head"><h2>Desserts</h2><span class="cat-sub">Fruits frais</span></div>
+    <div class="items">
+      <div class="item-row"><span class="item-name">Perles de tapioca, lait de coco &amp; mangue</span><span class="item-dots"></span><span class="item-price">5,50</span></div>
+      <div class="item-row"><span class="item-name">Salade de fruits frais</span><span class="item-dots"></span><span class="item-price">5,50</span></div>
+      <div class="item-row"><span class="item-name">Tofu soyeux, caramel, gingembre</span><span class="item-dots"></span><span class="item-price">5,50</span></div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:14px;margin-bottom:auto;">
+    <div style="flex:1;text-align:center;">
+      <img src="../assets/desserts-tapioca.jpg" alt="Perles de tapioca" style="width:100%;height:140px;object-fit:cover;border-radius:3px;">
+      <div style="font-size:9.5px;color:var(--ink-2);margin-top:6px;">Perles de tapioca, lait de coco &amp; mangue</div>
+    </div>
+    <div style="flex:1;text-align:center;">
+      <img src="../assets/desserts-tofu.jpg" alt="Tofu soyeux caramel gingembre" style="width:100%;height:140px;object-fit:cover;border-radius:3px;">
+      <div style="font-size:9.5px;color:var(--ink-2);margin-top:6px;">Tofu soyeux, caramel, gingembre</div>
+    </div>
+  </div>
+
+  <div class="footnote">Carte non contractuelle · les plats varient selon le marché et les arrivages du jour.</div>
+</div>
+
+<!-- PAGE 4 : BOISSONS -->
+<div class="page" id="p4">
+  <div class="kicker">La carte</div>
+  <div class="cat-head"><h2>Boissons</h2><span class="cat-sub">Bio &amp; pressé maison</span></div>
+  <div class="items" style="gap:22px;">
+    <div>
+      <div class="item-row"><span class="item-name">Café bio</span><span class="item-dots"></span><span class="item-price">1,00&nbsp;/&nbsp;1,30</span></div>
+      <div class="item-desc">à emporter / sur place</div>
+    </div>
+    <div>
+      <div class="item-row"><span class="item-name">Café frappé</span><span class="item-dots"></span><span class="item-price">3,50</span></div>
+      <div class="item-desc">+ lait végétal (+0,50€)</div>
+    </div>
+    <div class="item-row"><span class="item-name">Café Latte (lait soja)</span><span class="item-dots"></span><span class="item-price">3,50</span></div>
+    <div>
+      <div class="item-row"><span class="item-name">Thé glacé maison</span><span class="item-dots"></span><span class="item-price">3,70</span></div>
+      <div class="item-desc">Thé noir ou thé vert, menthe fraîche, gingembre bio</div>
+    </div>
+    <div>
+      <div class="item-row"><span class="item-name">Thé glacé maison citron &amp; miel</span><span class="item-dots"></span><span class="item-price">3,90</span></div>
+      <div class="item-desc">Thé noir ou thé vert, menthe fraîche, gingembre bio, citron &amp; miel</div>
+    </div>
+    <div>
+      <div class="item-row"><span class="item-name">Jus de fruits frais du jour 33cl</span><span class="item-dots"></span><span class="item-price">4,90</span></div>
+      <div class="item-desc">Orange, ananas, banane, menthe fraîche, gingembre bio · 50cl (+1€)</div>
+    </div>
+    <div>
+      <div class="item-row"><span class="item-name">Infusion menthe fraîche</span><span class="item-dots"></span><span class="item-price">2,30</span></div>
+      <div class="item-desc">+ gingembre bio (+0,30€) · ou + citron, miel &amp; gingembre (+0,60€)</div>
+    </div>
+  </div>
+  <div class="footnote">Carte non contractuelle · les plats varient selon le marché et les arrivages du jour.</div>
+</div>
+
+</body>
+</html>
