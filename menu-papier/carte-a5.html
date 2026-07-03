@@ -13,6 +13,8 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'Bricolage Grotesque',sans-serif;background:#ddd;}
+  @page{size:148mm 210mm;margin:0;}
+  @media print{body{background:none;}}
   .page{
     width:559px;height:794px;background:var(--bg);color:var(--ink);
     position:relative;overflow:hidden;page-break-after:always;
@@ -28,27 +30,36 @@
   .item-dots{flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px);}
   .item-price{font-weight:700;font-size:.9rem;font-feature-settings:'tnum';white-space:nowrap;}
   .item-desc{font-size:11px;color:var(--ink-2);margin-top:3px;line-height:1.45;}
-  .section-block{margin-bottom:30px;}
+  .section-block{margin-bottom:26px;}
   .badge{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:30px;padding:6px 12px;}
-  .footnote{font-size:10px;color:var(--ink-2);text-align:center;margin-top:auto;padding-top:18px;}
+  .footnote{font-size:10px;color:var(--ink-2);text-align:center;margin-top:auto;padding-top:14px;}
+  .photos-row{display:flex;gap:12px;margin-top:auto;margin-bottom:0;align-items:flex-end;}
+  .photo-slot{flex:1;text-align:center;}
+  .photo-slot img{display:block;margin:0 auto;width:auto;max-width:100%;height:auto;object-fit:contain;border-radius:3px;}
+  .photo-slot .photo-label{font-size:9.5px;color:var(--ink-2);margin-top:5px;}
+  .photo-placeholder{width:100%;background:var(--accent-soft);border-radius:3px;display:flex;align-items:center;justify-content:center;border:1.5px dashed var(--line);}
+  .photo-placeholder span{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);}
 </style>
 </head>
 <body>
 
 <!-- PAGE 1 : COUVERTURE -->
-<div class="page" id="p1" style="align-items:center;text-align:center;">
-  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:18px;">
-    <img src="../assets/logo-carre.png" alt="Tuk Tuk" style="width:420px;height:420px;object-fit:contain;margin-bottom:14px;">
-    <div style="font-size:1.05rem;color:var(--accent);font-weight:600;margin-bottom:14px;line-height:1.4;">Cuisine fusion d'Asie du Sud-Est<br>&amp; d'ailleurs</div>
-    <div style="width:34px;height:1.5px;background:var(--accent);opacity:.55;margin:0 0 22px;"></div>
-    <p style="font-size:.95rem;color:var(--ink-2);line-height:1.65;max-width:380px;margin-bottom:26px;">Tout est fait maison, alors la carte évolue régulièrement selon le marché et les arrivages. <strong style="color:var(--ink);">Une mini-carte, au jour le jour.</strong></p>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
+<div class="page" id="p1" style="align-items:center;text-align:center;justify-content:center;gap:28px;">
+  <div style="display:flex;flex-direction:column;align-items:center;">
+    <img src="../assets/logo-carre.png" alt="Tuk Tuk" style="width:300px;height:300px;object-fit:contain;margin-bottom:14px;">
+    <div style="font-size:1.05rem;color:var(--accent);font-weight:600;margin-bottom:12px;line-height:1.4;">Cuisine fusion d'Asie du Sud-Est<br>&amp; d'ailleurs</div>
+    <div style="width:34px;height:1.5px;background:var(--accent);opacity:.55;margin:0 0 16px;"></div>
+    <p style="font-size:.95rem;color:var(--ink-2);line-height:1.65;max-width:380px;margin-bottom:18px;">Tout est fait maison, alors la carte évolue régulièrement selon le marché et les arrivages. <strong style="color:var(--ink);">Une mini-carte, au jour le jour.</strong></p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:14px;">
       <span class="badge">100% halal</span>
       <span class="badge">Plats végétariens</span>
       <span class="badge">Options sans gluten</span>
     </div>
+    <div style="width:100%;background:var(--accent);color:var(--accent-ink);padding:11px 18px;border-radius:3px;font-size:1rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;">
+      SERVICE AU COMPTOIR
+    </div>
   </div>
-  <div style="width:100%;text-align:center;font-size:11px;color:var(--ink-2);line-height:2.1;border-top:1px solid var(--line);padding-top:20px;margin-top:auto;">
+  <div style="width:100%;text-align:center;font-size:11px;color:var(--ink-2);line-height:2.1;border-top:1px solid var(--line);padding-top:18px;">
     <div>10 Rue Doudart de Lagrée, 38000 Grenoble</div>
     <div>Lundi–Jeudi &amp; Samedi · 9h30–14h30 · Fermé vendredi &amp; dimanche</div>
     <div>Réservation par SMS · 07 69 16 08 10</div>
@@ -57,21 +68,21 @@
 
 <!-- PAGE 2 : BANH MI + BRUSCHETTE -->
 <div class="page" id="p2">
-  <div class="kicker">La carte</div>
+  <div class="kicker">La carte &nbsp;·&nbsp; <span style="color:var(--accent);font-weight:800;letter-spacing:.12em;">SERVICE AU COMPTOIR</span></div>
   <div class="section-block">
     <div class="cat-head"><h2>Banh Mi</h2><span class="cat-sub">Sandwich</span></div>
     <div class="items">
       <div>
         <div class="item-row"><span class="item-name">Bœuf au saté</span><span class="item-dots"></span><span class="item-price">8,90</span></div>
-        <div class="item-desc">Mayonnaise coriandre, pickles maison (carottes, concombre, oignon rouge), oignons frits, bœuf mariné saté</div>
+        <div class="item-desc">Mayonnaise coriandre, pickles maison (carottes, concombre, chou rouge), oignons frits, bœuf mariné saté</div>
       </div>
       <div>
-        <div class="item-row"><span class="item-name">Poulet aux épices</span><span class="item-dots"></span><span class="item-price">8,50</span></div>
-        <div class="item-desc">Mayonnaise coriandre, pickles maison (carottes, concombre, oignon rouge), oignons frits, poulet mariné</div>
+        <div class="item-row"><span class="item-name">Poulet au gingembre</span><span class="item-dots"></span><span class="item-price">8,50</span></div>
+        <div class="item-desc">Mayonnaise coriandre, pickles maison (carottes, concombre, chou rouge), oignons frits, poulet mariné au gingembre</div>
       </div>
       <div>
-        <div class="item-row"><span class="item-name">Tofu au kroeung</span><span class="item-dots"></span><span class="item-price">8,50</span></div>
-        <div class="item-desc">Citronnelle, curcuma, galanga, kombava</div>
+        <div class="item-row"><span class="item-name">Veau char siu</span><span class="item-dots"></span><span class="item-price">9,50</span></div>
+        <div class="item-desc">Mayonnaise coriandre, pickles maison (carottes, concombre, chou rouge), oignons frits, veau mariné char siu</div>
       </div>
     </div>
   </div>
@@ -84,12 +95,22 @@
       <div class="item-row"><span class="item-name">Thon</span><span class="item-dots"></span><span class="item-price">6,70</span></div>
     </div>
   </div>
+  <div class="photos-row">
+    <div class="photo-slot">
+      <img src="../assets/galerie/photo-banh-mi.jpg" alt="Banh mì maison" style="max-height:110px;">
+      <div class="photo-label">Banh mì maison</div>
+    </div>
+    <div class="photo-slot">
+      <img src="../assets/fusion.jpg" alt="Bruschette maison" style="max-height:110px;">
+      <div class="photo-label">Bruschette maison</div>
+    </div>
+  </div>
   <div class="footnote">Carte non contractuelle · les plats varient selon le marché et les arrivages du jour.</div>
 </div>
 
-<!-- PAGE 3 : PLATS + DESSERTS -->
+<!-- PAGE 3 : PLATS -->
 <div class="page" id="p3">
-  <div class="kicker">La carte</div>
+  <div class="kicker">La carte &nbsp;·&nbsp; <span style="color:var(--accent);font-weight:800;letter-spacing:.12em;">SERVICE AU COMPTOIR</span></div>
   <div class="section-block">
     <div class="cat-head"><h2>Plats</h2><span class="cat-sub">Bowls &amp; wok</span></div>
     <div class="items">
@@ -98,18 +119,39 @@
         <div class="item-desc">Poivre de Kampot, salade, oignon rouge, tomate cerise, riz jasmin sauté, œuf au plat, coriandre, citron vert</div>
       </div>
       <div>
-        <div class="item-row"><span class="item-name">Salade de bœuf citronnelle &amp; basilic thaï</span><span class="item-dots"></span><span class="item-price">10,00</span></div>
-        <div class="item-desc">Crudités, concombre, carotte, basilic thaï, oignon rouge</div>
+        <div class="item-row"><span class="item-name">Salade de poulet façon Larb</span><span class="item-dots"></span><span class="item-price">10,50</span></div>
+        <div class="item-desc">Crudités (carottes, concombre, soja, coriandre, menthe), vermicelles croquantes, poulet haché à la citronnelle et poudre de riz gluant grillé, cacahuète, citron vert</div>
       </div>
       <div>
-        <div class="item-row"><span class="item-name">Bobun bœuf</span><span class="item-dots"></span><span class="item-price">10,90</span></div>
-        <div class="item-desc">Salade, carotte, concombre, soja, menthe fraîche, cacahuète, vermicelles de riz, nem frais au poulet, bœuf mariné au saté, citron vert, coriandre</div>
+        <div class="item-row"><span class="item-name">Bobun bœuf ou crevettes</span><span class="item-dots"></span><span class="item-price">10,90</span></div>
+        <div class="item-desc">Salade, carotte, concombre, soja, menthe fraîche, cacahuète, vermicelles de riz, nem frais au poulet, bœuf mariné au saté ou crevettes, citron vert, coriandre</div>
+      </div>
+      <div>
+        <div class="item-row"><span class="item-name">Salade de tofu bio à la citronnelle et kombava</span><span class="item-dots"></span><span class="item-price">10,00</span></div>
+        <div class="item-desc">Crudités, vermicelles de riz, cacahuètes, citron vert</div>
+      </div>
+      <div>
+        <div class="item-row"><span class="item-name">Riz sauté</span><span class="item-dots"></span><span class="item-price">2,50</span></div>
       </div>
     </div>
-    <div class="item-desc" style="margin-top:8px;">Supplément riz sauté +2,50€</div>
   </div>
+  <div class="photos-row">
+    <div class="photo-slot">
+      <img src="../assets/galerie/photo-larb.jpg" alt="Salade de poulet façon Larb" style="max-height:120px;">
+      <div class="photo-label">Salade de poulet façon Larb</div>
+    </div>
+    <div class="photo-slot">
+      <img src="../assets/galerie/photo-banh-mi.jpg" alt="Banh mì maison" style="max-height:120px;">
+      <div class="photo-label">Banh mì maison</div>
+    </div>
+  </div>
+  <div class="footnote">Carte non contractuelle · les plats varient selon le marché et les arrivages du jour.</div>
+</div>
 
-  <div class="section-block" style="margin-bottom:18px;">
+<!-- PAGE 4 : DESSERTS -->
+<div class="page" id="p4">
+  <div class="kicker">La carte &nbsp;·&nbsp; <span style="color:var(--accent);font-weight:800;letter-spacing:.12em;">SERVICE AU COMPTOIR</span></div>
+  <div class="section-block">
     <div class="cat-head"><h2>Desserts</h2><span class="cat-sub">Fruits frais</span></div>
     <div class="items">
       <div class="item-row"><span class="item-name">Perles de tapioca, lait de coco &amp; mangue</span><span class="item-dots"></span><span class="item-price">5,50</span></div>
@@ -117,26 +159,24 @@
       <div class="item-row"><span class="item-name">Tofu soyeux, caramel, gingembre</span><span class="item-dots"></span><span class="item-price">5,50</span></div>
     </div>
   </div>
-
-  <div style="display:flex;gap:14px;margin-bottom:auto;">
-    <div style="flex:1;text-align:center;">
-      <img src="../assets/desserts-tapioca.jpg" alt="Perles de tapioca" style="width:100%;height:140px;object-fit:cover;border-radius:3px;">
-      <div style="font-size:9.5px;color:var(--ink-2);margin-top:6px;">Perles de tapioca, lait de coco &amp; mangue</div>
+  <div class="photos-row" style="margin-top:auto;">
+    <div class="photo-slot">
+      <img src="../assets/desserts-tapioca.jpg" alt="Perles de tapioca" style="max-height:180px;">
+      <div class="photo-label">Perles de tapioca, lait de coco &amp; mangue</div>
     </div>
-    <div style="flex:1;text-align:center;">
-      <img src="../assets/desserts-tofu.jpg" alt="Tofu soyeux caramel gingembre" style="width:100%;height:140px;object-fit:cover;border-radius:3px;">
-      <div style="font-size:9.5px;color:var(--ink-2);margin-top:6px;">Tofu soyeux, caramel, gingembre</div>
+    <div class="photo-slot">
+      <img src="../assets/desserts-tofu.jpg" alt="Tofu soyeux caramel gingembre" style="max-height:180px;">
+      <div class="photo-label">Tofu soyeux, caramel, gingembre</div>
     </div>
   </div>
-
   <div class="footnote">Carte non contractuelle · les plats varient selon le marché et les arrivages du jour.</div>
 </div>
 
-<!-- PAGE 4 : BOISSONS -->
-<div class="page" id="p4">
-  <div class="kicker">La carte</div>
+<!-- PAGE 5 : BOISSONS -->
+<div class="page" id="p5">
+  <div class="kicker">La carte &nbsp;·&nbsp; <span style="color:var(--accent);font-weight:800;letter-spacing:.12em;">SERVICE AU COMPTOIR</span></div>
   <div class="cat-head"><h2>Boissons</h2><span class="cat-sub">Bio &amp; pressé maison</span></div>
-  <div class="items" style="gap:22px;">
+  <div class="items" style="gap:14px;">
     <div>
       <div class="item-row"><span class="item-name">Café bio</span><span class="item-dots"></span><span class="item-price">1,00&nbsp;/&nbsp;1,30</span></div>
       <div class="item-desc">à emporter / sur place</div>
@@ -159,8 +199,26 @@
       <div class="item-desc">Orange, ananas, banane, menthe fraîche, gingembre bio · 50cl (+1€)</div>
     </div>
     <div>
+      <div class="item-row"><span class="item-name">Jus de fruits exotiques en canette 33cl</span><span class="item-dots"></span><span class="item-price">3,00</span></div>
+      <div class="item-desc">Mangue, litchee, passion, coco</div>
+    </div>
+    <div>
+      <div class="item-row"><span class="item-name">Soft gazeux 25cl</span><span class="item-dots"></span><span class="item-price">2,00</span></div>
+      <div class="item-desc">Slim ananas · Hamoud limonade · Hamoud cola</div>
+    </div>
+    <div>
       <div class="item-row"><span class="item-name">Infusion menthe fraîche</span><span class="item-dots"></span><span class="item-price">2,30</span></div>
-      <div class="item-desc">+ gingembre bio (+0,30€) · ou + citron, miel &amp; gingembre (+0,60€)</div>
+      <div class="item-desc">+ gingembre bio (+0,30€) · ou + gingembre bio &amp; miel (+0,60€)</div>
+    </div>
+  </div>
+  <div class="photos-row" style="margin-top:auto;">
+    <div class="photo-slot">
+      <div class="photo-placeholder" style="height:80px;"><span>Photo à venir</span></div>
+      <div class="photo-label">Boisson 1</div>
+    </div>
+    <div class="photo-slot">
+      <div class="photo-placeholder" style="height:80px;"><span>Photo à venir</span></div>
+      <div class="photo-label">Boisson 2</div>
     </div>
   </div>
   <div class="footnote">Carte non contractuelle · les plats varient selon le marché et les arrivages du jour.</div>

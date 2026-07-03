@@ -1,18 +1,9 @@
-const { chromium } = require('playwright');
+const { execSync } = require('child_process');
 const path = require('path');
 
-(async () => {
-  const browser = await chromium.launch();
-  const page = await browser.newPage({ deviceScaleFactor: 3.13 });
-  const filePath = 'file:///' + path.resolve(__dirname, 'carte-a5.html').replace(/\\/g, '/');
-  await page.goto(filePath);
-  await page.waitForTimeout(500);
+const chrome = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+const htmlPath = path.resolve(__dirname, 'carte-a5.html').replace(/\\/g, '/');
+const pdfPath = path.resolve(__dirname, 'carte-tuktuk.pdf');
 
-  for (const id of ['p1', 'p2', 'p3', 'p4']) {
-    const el = await page.$('#' + id);
-    await el.screenshot({ path: path.resolve(__dirname, id + '.png') });
-    console.log(id + '.png OK');
-  }
-
-  await browser.close();
-})();
+execSync(`"${chrome}" --headless=new --disable-gpu --print-to-pdf="${pdfPath}" --no-pdf-header-footer "file:///${htmlPath}"`);
+console.log('carte-tuktuk.pdf OK');
