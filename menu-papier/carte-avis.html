@@ -13,22 +13,26 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'Bricolage Grotesque',sans-serif;background:#ddd;}
+  @page{size:A6 portrait;margin:0;}
+  @media print{body{background:none;}}
   .card{
     width:397px;height:559px;background:var(--bg);color:var(--ink);
     display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:36px 30px;
+    text-align:center;padding:34px 30px;
   }
+  .qr-box{background:#fff;border:1px solid var(--line);border-radius:6px;padding:12px;}
+  .qr-box svg{width:140px;height:140px;display:block;}
 </style>
 </head>
 <body>
 
 <div class="card" id="avis">
-  <img src="../assets/logo-carre.png" alt="Tuk Tuk" style="width:110px;height:110px;object-fit:contain;margin-bottom:14px;">
+  <img src="../assets/logo.png" alt="Tuk Tuk" style="width:200px;height:auto;display:block;margin-bottom:22px;">
   <div style="font-size:1.02rem;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.35;">Vous avez passé un bon moment ?</div>
-  <p style="font-size:.78rem;color:var(--ink-2);line-height:1.55;max-width:300px;margin-bottom:20px;">Un avis Google nous aide énormément à faire connaître Tuk Tuk — ça prend 30 secondes, et ça compte beaucoup pour nous.</p>
+  <p style="font-size:.78rem;color:var(--ink-2);line-height:1.55;max-width:300px;margin-bottom:20px;">Un avis Google nous aide à faire connaître Tuk Tuk.</p>
 
-  <div style="background:#fff;border:1px solid var(--line);border-radius:6px;padding:12px;margin-bottom:14px;">
-    <img src="qr-avis.png" alt="QR code avis Google" style="width:140px;height:140px;display:block;">
+  <div class="qr-box" style="margin-bottom:14px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" shape-rendering="crispEdges"><path stroke="#2b2420" d="M0 0.5h7m4 0h3m2 0h3m1 0h2m1 0h1m1 0h1m1 0h1m2 0h7M0 1.5h1m5 0h1m3 0h1m1 0h2m1 0h1m1 0h1m4 0h1m1 0h2m2 0h1m1 0h1m5 0h1M0 2.5h1m1 0h3m1 0h1m1 0h2m6 0h1m2 0h1m1 0h1m1 0h3m2 0h1m1 0h1m1 0h3m1 0h1M0 3.5h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h1m4 0h2m5 0h1m1 0h1m1 0h3m1 0h1M0 4.5h1m1 0h3m1 0h1m2 0h2m1 0h3m1 0h1m1 0h1m3 0h1m3 0h1m3 0h1m1 0h3m1 0h1M0 5.5h1m5 0h1m4 0h1m1 0h5m2 0h1m2 0h1m6 0h1m5 0h1M0 6.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M10 7.5h2m2 0h2m2 0h1m1 0h6m1 0h2M3 8.5h2m1 0h2m3 0h1m4 0h4m1 0h5m2 0h1m4 0h2M0 9.5h1m1 0h3m2 0h1m3 0h3m1 0h2m3 0h2m2 0h2m5 0h2m1 0h3M1 10.5h3m2 0h2m1 0h1m2 0h3m2 0h1m2 0h1m2 0h3m3 0h6m1 0h1M0 11.5h1m1 0h4m1 0h2m3 0h3m1 0h5m1 0h3m1 0h2m1 0h2m1 0h3M3 12.5h2m1 0h1m2 0h1m1 0h1m2 0h3m1 0h1m1 0h1m3 0h1m3 0h1m1 0h1m2 0h1m1 0h1M0 13.5h2m1 0h3m1 0h3m1 0h3m2 0h1m1 0h1m1 0h1m4 0h5m1 0h2m1 0h1M0 14.5h2m3 0h2m1 0h3m1 0h2m7 0h1m5 0h1m1 0h1m3 0h4M3 15.5h2m4 0h1m2 0h1m3 0h1m6 0h2m4 0h1m2 0h3m1 0h1M0 16.5h1m1 0h1m2 0h3m2 0h7m1 0h2m3 0h5m2 0h1m3 0h3M1 17.5h4m2 0h1m1 0h1m2 0h1m1 0h1m1 0h2m5 0h1m2 0h1m7 0h2M0 18.5h2m1 0h1m2 0h3m1 0h1m1 0h2m1 0h2m6 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1M1 19.5h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h9m1 0h3m1 0h2m1 0h1m1 0h2m1 0h1M2 20.5h1m2 0h3m2 0h4m6 0h3m1 0h3m1 0h1m1 0h1m1 0h2m1 0h2M1 21.5h2m2 0h1m1 0h1m1 0h1m2 0h1m1 0h1m3 0h3m2 0h1m1 0h4m2 0h2m1 0h2M0 22.5h1m1 0h1m3 0h3m1 0h1m1 0h1m1 0h1m4 0h2m1 0h4m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1M5 23.5h1m1 0h1m3 0h1m1 0h1m2 0h1m1 0h1m3 0h1m2 0h1m1 0h2m1 0h2m1 0h2M1 24.5h1m1 0h1m2 0h2m8 0h2m2 0h1m3 0h2m2 0h1m1 0h2m1 0h2M0 25.5h1m3 0h1m4 0h3m1 0h3m1 0h1m1 0h3m3 0h2m2 0h1m2 0h2m2 0h1M0 26.5h2m2 0h3m3 0h1m1 0h10m1 0h2m1 0h2m2 0h3m1 0h3M0 27.5h1m6 0h3m1 0h3m1 0h1m2 0h1m4 0h1m3 0h1m1 0h1m1 0h6M0 28.5h1m1 0h2m1 0h2m3 0h1m2 0h2m2 0h3m1 0h1m2 0h9m1 0h3M8 29.5h1m3 0h2m1 0h1m1 0h1m2 0h3m1 0h2m2 0h1m3 0h3M0 30.5h7m1 0h3m2 0h1m4 0h2m3 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1M0 31.5h1m5 0h1m3 0h2m4 0h1m1 0h2m1 0h2m2 0h1m1 0h2m3 0h2M0 32.5h1m1 0h3m1 0h1m1 0h1m6 0h4m1 0h1m6 0h6m2 0h1M0 33.5h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h4m2 0h2m1 0h1m2 0h2m1 0h2m1 0h2M0 34.5h1m1 0h3m1 0h1m2 0h5m1 0h2m1 0h1m1 0h1m1 0h2m1 0h2m1 0h1m2 0h2m1 0h3M0 35.5h1m5 0h1m2 0h2m3 0h1m1 0h2m2 0h1m2 0h2m4 0h8M0 36.5h7m2 0h1m1 0h1m6 0h2m1 0h1m1 0h3m1 0h3m1 0h1m1 0h1m2 0h1"/></svg>
   </div>
   <div style="font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:20px;">Scannez pour nous laisser un avis</div>
 

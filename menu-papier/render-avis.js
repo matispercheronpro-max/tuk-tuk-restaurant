@@ -1,14 +1,10 @@
-const { chromium } = require('playwright');
+const { execSync } = require('child_process');
 const path = require('path');
 
-(async () => {
-  const browser = await chromium.launch();
-  const page = await browser.newPage({ deviceScaleFactor: 3.13 });
-  const filePath = 'file:///' + path.resolve(__dirname, 'carte-avis.html').replace(/\\/g, '/');
-  await page.goto(filePath);
-  await page.waitForTimeout(400);
-  const el = await page.$('#avis');
-  await el.screenshot({ path: path.resolve(__dirname, 'carte-avis.png') });
-  console.log('carte-avis.png OK');
-  await browser.close();
-})();
+const chrome = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+const htmlPath = path.resolve(__dirname, 'carte-avis.html').replace(/\\/g, '/');
+const pdfPath = path.resolve(__dirname, 'carte-avis.pdf');
+
+// A6 portrait : 105mm x 148mm = 4.13in x 5.83in
+execSync(`"${chrome}" --headless=new --disable-gpu --print-to-pdf="${pdfPath}" --no-pdf-header-footer --paper-width=4.13 --paper-height=5.83 "file:///${htmlPath}"`);
+console.log('carte-avis.pdf OK');
