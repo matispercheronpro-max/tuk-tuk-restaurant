@@ -32,7 +32,15 @@
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday"],
       "opens": "09:30",
-      "closes": "14:30"
+      "closes": "14:30",
+      "validThrough": "2026-10-10"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "11:00",
+      "closes": "14:30",
+      "validFrom": "2026-10-11"
     }
   ]
 }
@@ -83,6 +91,15 @@
       <a href="sms:0769160810" class="btn-outline" style="width:100%;justify-content:center;">SMS · 07 69 16 08 10</a>
     </div>
   </aside>
+
+  <!-- ANNONCE : changement d'horaires (s'efface tout seul apres la periode) -->
+  <div data-jusquau="2026-11-02" hidden style="background:var(--accent);color:var(--accent-ink);padding:13px clamp(18px,5vw,56px);">
+    <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;text-align:center;font-size:clamp(.92rem,1.5vw,1rem);line-height:1.5;">
+      <span style="font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.78rem;">Nouveaux horaires</span>
+      <span>À partir du <strong>dimanche 11 octobre</strong> : ouvert du dimanche au jeudi, 11h00–14h30. Nouveau rendez-vous le dimanche.</span>
+      <a href="#acces" style="color:var(--accent-ink);font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;">Voir les horaires</a>
+    </div>
+  </div>
 
   <!-- HERO -->
   <header id="top" class="hero-section" style="position:relative;padding:clamp(40px,7vw,86px) clamp(18px,5vw,56px) clamp(24px,4vw,48px);">
@@ -194,10 +211,15 @@
         <p style="font-size:clamp(1rem,1.5vw,1.08rem);line-height:1.7;color:var(--ink-2);margin:0;">Tout est <strong style="color:var(--ink);font-weight:700;">fait maison</strong>, alors la carte évolue régulièrement. Selon le marché et les arrivages, certains plats sont là… ou pas. <strong style="color:var(--ink);font-weight:700;">Envoyez-nous un message</strong> pour savoir ce qui est dispo aujourd'hui&nbsp;!</p>
       </div>
 
+      <div data-reveal="1" style="max-width:660px;margin:0 auto clamp(30px,4vw,44px);background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:2px;padding:16px 20px;text-align:left;">
+        <div style="font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:7px;">Le rendez-vous du dimanche</div>
+        <p style="font-size:.98rem;line-height:1.6;color:var(--ink-2);margin:0;">Le dimanche, la carte change : <strong style="color:var(--ink);font-weight:600;">soupe Phnom Penh, banh mi, bruschette et pinsa</strong>. Les plats reviennent du lundi au jeudi.</p>
+      </div>
       <div data-reveal="1" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;max-width:680px;margin:0 auto clamp(34px,4vw,48px);">
         <span style="display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;letter-spacing:.03em;color:var(--accent);background:var(--accent-soft);border-radius:40px;padding:8px 16px;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;display:block;"><path d="M20 6 9 17l-5-5"></path></svg>100% حلال ( halal )</span>
         <span style="display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;letter-spacing:.03em;color:var(--accent);background:var(--accent-soft);border-radius:40px;padding:8px 16px;"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="flex:none;display:block;"><path d="M6 21C6 12 12 6 21 6 21 15 15 21 6 21Z"></path></svg>Plats végétariens</span>
         <span style="display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;letter-spacing:.03em;color:var(--accent);background:var(--accent-soft);border-radius:40px;padding:8px 16px;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none;display:block;"><path d="M12 22V8"></path><path d="M12 8c0-2 1.4-3.5 3-3.5C15 6.5 13.6 8 12 8Z"></path><path d="M12 8c0-2-1.4-3.5-3-3.5C9 6.5 10.4 8 12 8Z"></path><path d="M12 13c0-2 1.4-3.5 3-3.5C15 11.5 13.6 13 12 13Z"></path><path d="M12 13c0-2-1.4-3.5-3-3.5C9 11.5 10.4 13 12 13Z"></path><path d="M12 18c0-2 1.4-3.5 3-3.5C15 16.5 13.6 18 12 18Z"></path><path d="M12 18c0-2-1.4-3.5-3-3.5C9 16.5 10.4 18 12 18Z"></path></svg>Options sans gluten</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;letter-spacing:.03em;color:var(--accent);background:var(--accent-soft);border-radius:40px;padding:8px 16px;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;display:block;"><circle cx="12" cy="12" r="9"></circle><path d="M5.6 5.6l12.8 12.8"></path></svg>Sans glutamate</span>
         <span style="font-size:14.5px;color:var(--ink-2);">— demandez-nous, on vous guide&nbsp;!</span>
       </div>
 
@@ -421,11 +443,11 @@
         <div style="font-size:12px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Horaires &amp; accès</div>
         <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-.015em;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.08;margin:0 0 28px;color:var(--ink);">On vous attend</h2>
         <div style="display:flex;flex-direction:column;gap:0;margin-bottom:16px;">
-          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);"><span style="font-weight:600;color:var(--ink);">Lundi – Jeudi</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem;font-feature-settings:'tnum';color:var(--ink-2);">9h30–14h30</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);"><span style="font-weight:600;color:var(--ink);">Dimanche – Jeudi</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem;font-feature-settings:'tnum';color:var(--ink-2);">11h00–14h30</span></div>
           <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);"><span style="font-weight:600;color:var(--ink);">Vendredi</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem;font-feature-settings:'tnum';color:var(--accent);">Fermé</span></div>
-          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);"><span style="font-weight:600;color:var(--ink);">Samedi</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem;font-feature-settings:'tnum';color:var(--ink-2);">9h30–14h30</span></div>
-          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);"><span style="font-weight:600;color:var(--ink);">Dimanche</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem;font-feature-settings:'tnum';color:var(--accent);">Fermé</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);"><span style="font-weight:600;color:var(--ink);">Samedi</span><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem;font-feature-settings:'tnum';color:var(--accent);">Fermé</span></div>
         </div>
+        <p data-jusquau="2026-10-11" hidden style="font-size:.95rem;line-height:1.6;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:2px;padding:12px 15px;margin:0 0 20px;">Ces horaires s'appliquent <strong style="color:var(--ink);">à partir du dimanche 11 octobre</strong>. Jusqu'au samedi 10 inclus, nous vous accueillons du lundi au jeudi et le samedi, de 9h30 à 14h30.</p>
         <p style="font-family:'Bricolage Grotesque',sans-serif;font-size:1.15rem;color:var(--accent);margin:0 0 26px;">Service le midi uniquement.</p>
         <div style="font-style:normal;line-height:1.7;color:var(--ink);margin-bottom:22px;">
           <div style="font-weight:700;">Tuk Tuk</div>
@@ -475,5 +497,13 @@
 
 </div>
 <script src="script.js"></script>
+<script>
+  // Les blocs data-jusquau sont masques par defaut (hidden dans le HTML) : sans JS,
+  // le site montre directement les horaires definitifs. Ils ne s'affichent que
+  // pendant la periode de transition, puis disparaissent sans intervention.
+  document.querySelectorAll('[data-jusquau]').forEach(function (el) {
+    if (new Date() < new Date(el.getAttribute('data-jusquau') + 'T00:00:00')) el.hidden = false;
+  });
+</script>
 </body>
 </html>
